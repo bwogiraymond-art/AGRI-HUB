@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, } from 'react';
+import { type ReactNode } from 'react';
 import type { AuthState, LoginCredentials, User } from '../types/auth.types';
 
 // ─── Mock user store (replace with real API calls) ────────────────────────

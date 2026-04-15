@@ -1,5 +1,5 @@
 import { useMarket } from '../context/MarketContext';
-import type { QueueItem, QualityGrade } from '../types/market.types';
+import type { QualityGrade } from '../types/market.types';
 
 export function useQueue() {
   const { queue, updateQueueItem, addActivity } = useMarket();

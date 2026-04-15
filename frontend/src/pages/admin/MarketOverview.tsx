@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useMarket }   from '../../context/MarketContext';
-import { usePrices }   from '../../hooks/usePrices';
-import { StatCard, PriceRow, InsightCard } from '../../components/ui';
+import { StatCard, InsightCard } from '../../components/ui';
 import { formatUGX }   from '../../utils/formatters';
 
 const DISTRICT_DATA = [
@@ -10,11 +9,9 @@ const DISTRICT_DATA = [
   { name: 'Jinja',  pct: 11 }, { name: 'Others', pct: 10 },
 ];
 const COMMODITY_COLORS = ['#BA7517','#3B6D11','#993C1D','#0F6E56','#185FA5','#5F5E5A'];
-const DOT_COLORS       = ['#639922','#3B6D11','#D85A30','#BA7517','#185FA5','#5F5E5A'];
 
 export default function MarketOverview() {
   const { summary }        = useMarket();
-  const { prices, trends } = usePrices();
 
   const txRef   = useRef<HTMLCanvasElement>(null);
   const donutRef= useRef<HTMLCanvasElement>(null);

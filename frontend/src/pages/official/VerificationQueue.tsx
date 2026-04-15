@@ -6,8 +6,6 @@ import { Modal, GradeButton, StatusPill, Toast } from '../../components/ui';
 import type { QualityGrade, QueueItem } from '../../types/market.types';
 import { formatUGX } from '../../utils/formatters';
 
-const GRADE_LABELS: Record<QualityGrade, string> = { A:'Grade A', B:'Grade B', C:'Grade C', F:'Reject' };
-
 export default function VerificationQueue() {
   const { user }                          = useAuth();
   const { queue, verifyItem, flagItem }   = useQueue();

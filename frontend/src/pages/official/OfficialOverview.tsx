@@ -1,7 +1,6 @@
 import { useMarket } from '../../context/MarketContext';
 import { useQueue }  from '../../hooks/useQueue';
 import { StatCard, StatusPill } from '../../components/ui';
-import { formatDate } from '../../utils/formatters';
 
 interface OfficialOverviewProps {
   onNavigate: (tab: string) => void;

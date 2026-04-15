@@ -4,7 +4,6 @@ import { useMarket } from '../../context/MarketContext';
 import { usePrices } from '../../hooks/usePrices';
 import { useToast }  from '../../hooks/useToast';
 import { StatCard, PriceRow, Toast } from '../../components/ui';
-import { formatUGX } from '../../utils/formatters';
 import { genRef }    from '../../utils/genRef';
 
 const CROPS    = ['Maize','Beans','Tomatoes','Cassava','Sweet potato','Sorghum','Groundnuts','Onions','Cabbage'];
@@ -16,7 +15,7 @@ interface FarmerOverviewProps {
 }
 
 export default function FarmerOverview({ onNavigate }: FarmerOverviewProps) {
-  const { user }  = useAuth();
+  useAuth();
   const { summary } = useMarket();
   const { prices, trends } = usePrices();
   const { toasts, show }   = useToast();

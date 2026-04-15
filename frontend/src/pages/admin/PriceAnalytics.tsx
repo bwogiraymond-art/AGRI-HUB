@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { usePrices } from '../../hooks/usePrices';
 import { PriceRow }  from '../../components/ui';
-import { formatUGX, pctChange } from '../../utils/formatters';
+import { formatUGX } from '../../utils/formatters';
 
 const TREND_DATA: Record<string, number[]> = {
   Maize:    [1050,1100,1080,1150,1100,1180,1200],
@@ -72,7 +72,7 @@ export default function PriceAnalytics() {
           responsive: true, maintainAspectRatio: false,
           plugins: {
             legend: { display: true, labels: { font: { size: 10 }, boxWidth: 10 } },
-            tooltip: { callbacks: { label: (v: { dataset: { label: string }; parsed: { y: number } }) => `${v.dataset.label}: ${formatUGX(Math.round(v.parsed.y))}/kg` } },
+            tooltip: { callbacks: { label: (v: { dataset: { label?: string }; parsed: { y: number | null } }) => `${v.dataset.label ?? 'Price'}: ${formatUGX(Math.round(v.parsed.y ?? 0))}/kg` } },
           },
           scales: {
             x: { grid: { display: false }, ticks: { font: { size: 10 } } },

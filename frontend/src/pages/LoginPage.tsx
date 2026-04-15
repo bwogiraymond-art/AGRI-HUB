@@ -94,10 +94,11 @@ export default function LoginPage() {
     }
   };
 
+  /*
   const today = new Date().toLocaleDateString('en-UG', {
     day: 'numeric', month: 'short', year: 'numeric',
   });
-
+  */
   return (
     <div style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', background: 'var(--color-background-tertiary)' }}>
 

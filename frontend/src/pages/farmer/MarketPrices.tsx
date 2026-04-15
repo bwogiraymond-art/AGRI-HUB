@@ -42,7 +42,7 @@ export default function MarketPrices() {
           maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
-            tooltip: { callbacks: { label: (v: { parsed: { y: number } }) => formatUGX(Math.round(v.parsed.y)) + '/kg' } },
+            tooltip: { callbacks: { label: (v: { parsed: { y: number | null } }) => formatUGX(Math.round(v.parsed.y ?? 0)) + '/kg' } },
           },
           scales: {
             x: { grid: { display: false }, ticks: { font: { size: 11 } } },

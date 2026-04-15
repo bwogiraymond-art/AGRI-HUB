@@ -1,5 +1,5 @@
 import { useMarket } from '../../context/MarketContext';
-import { formatUGX, todayLabel } from '../../utils/formatters';
+import { todayLabel } from '../../utils/formatters';
 
 export default function DailyReport() {
   const { prices, summary, activityLog } = useMarket();

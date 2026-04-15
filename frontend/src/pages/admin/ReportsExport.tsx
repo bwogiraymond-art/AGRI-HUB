@@ -32,7 +32,7 @@ const KPIS = [
 ];
 
 export default function ReportsExport() {
-  const { prices, summary } = useMarket();
+  const { prices } = useMarket();
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 16 }}>

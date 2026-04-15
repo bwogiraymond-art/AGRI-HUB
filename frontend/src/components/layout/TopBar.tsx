@@ -92,7 +92,7 @@ export default function TopBar({ role, userId, userName }: TopBarProps) {
           fontSize: 11, fontWeight: 500,
           padding: '3px 9px', borderRadius: 4,
         }}>
-          {cfg.label} · {userId}
+          {cfg.label} · {userName || userId}
         </div>
 
         {/* Date chip */}

@@ -1,6 +1,4 @@
 import { useRef, useEffect } from 'react';
-import { formatUGX } from '../../utils/formatters';
-
 const COMMODITY_COLORS = ['#BA7517','#3B6D11','#993C1D','#0F6E56','#185FA5','#5F5E5A'];
 const COMMODITIES      = ['Maize','Beans','Tomatoes','Cassava','Onions','Groundnuts'];
 const REVENUE_DATA     = [45.6, 61.3, 25.2, 12.8, 50.4, 33.0];
@@ -40,7 +38,7 @@ export default function ProduceVolume() {
           data: { labels: COMMODITIES, datasets: [{ data: REVENUE_DATA, backgroundColor: COMMODITY_COLORS, borderRadius: 4 }] },
           options: {
             responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { display: false }, tooltip: { callbacks: { label: (v: { parsed: { y: number } }) => 'UGX ' + v.parsed.y.toFixed(1) + 'M' } } },
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: (v: { parsed: { y: number | null } }) => 'UGX ' + (v.parsed.y ?? 0).toFixed(1) + 'M' } } },
             scales: { x: { grid: { display: false }, ticks: { font: { size: 10 } } }, y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { size: 10 }, callback: (v: unknown) => 'UGX ' + v + 'M' } } },
           },
         });
